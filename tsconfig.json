@@ -11,5 +11,5 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src", "esbuild.config.js"]
+  "include": ["src", "scripts/esbuild.config.js"]
 }

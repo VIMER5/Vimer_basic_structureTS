@@ -69,8 +69,18 @@ async function setupProject() {
     if (packageJson.bin && packageJson.bin["ts-init"]) {
       delete packageJson.bin["ts-init"];
     }
-    const setupScriptPath = path.join("./", "scripts");
-    fs.unlinkSync(setupScriptPath);
+    const setupFilePath = path.join(process.cwd(), "scripts", "setup.js");
+    if (fs.existsSync(setupFilePath)) {
+      fs.unlinkSync(setupFilePath);
+      console.log("✅ setup.js удален");
+
+      // Если папка scripts теперь пустая - удаляем ее
+      const scriptsDir = path.join(process.cwd(), "scripts");
+      const remainingFiles = fs.readdirSync(scriptsDir);
+      if (remainingFiles.length === 0) {
+        fs.rmdirSync(scriptsDir);
+      }
+    }
 
     fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
     console.log("✅ package.json обновлен");
