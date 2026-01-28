@@ -1,0 +1,19 @@
+{
+  "license": "ISC",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --env-file=.env esbuild.config.js --watch",
+    "build": "node --env-file=.env esbuild.config.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {},
+  "name": "basicstructurets",
+  "version": "1.0.0",
+  "description": "Modern TypeScript application",
+  "author": "vimer"
+}
