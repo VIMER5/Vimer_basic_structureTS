@@ -2,7 +2,6 @@
 
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
 import readline from "readline";
 
 const rl = readline.createInterface({
@@ -95,8 +94,6 @@ ${author ? `**Автор:** ${author}\n` : ""}
 ## Быстрый старт
 
 \`\`\`bash
-# Установка зависимостей
-npm install
 
 # Режим разработки
 npm run dev
