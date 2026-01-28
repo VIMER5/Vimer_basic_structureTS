@@ -63,7 +63,9 @@ async function setupProject() {
     if (packageJson.scripts && packageJson.scripts.setup) {
       delete packageJson.scripts.setup;
     }
-
+    if (packageJson.scripts && packageJson.scripts.postinstall) {
+      delete packageJson.scripts.postinstall;
+    }
     if (packageJson.bin && packageJson.bin["ts-init"]) {
       delete packageJson.bin["ts-init"];
     }
