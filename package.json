@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "node --env-file=.env esbuild.config.js --watch",
-    "build": "node --env-file=.env esbuild.config.js"
+    "build": "node --env-file=.env esbuild.config.js",
+    "postinstall": "node scripts/setup.js",
+    "setup": "node scripts/setup.js"
   },
   "devDependencies": {
     "esbuild": "^0.27.1",
