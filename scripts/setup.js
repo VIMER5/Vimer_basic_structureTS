@@ -69,6 +69,8 @@ async function setupProject() {
     if (packageJson.bin && packageJson.bin["ts-init"]) {
       delete packageJson.bin["ts-init"];
     }
+    const setupScriptPath = path.join("./", "scripts");
+    fs.unlinkSync(setupScriptPath);
 
     fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
     console.log("✅ package.json обновлен");
